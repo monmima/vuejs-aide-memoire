@@ -26,7 +26,7 @@ Vue.component("food", {
                 <img v-bind:src="food.img" v-bind:alt="food.img">
             </div>
 
-            <a v-bind:href="food.link" :title="food.name" :class="food.name">{{food.name}}</a>
+            <a v-bind:href="food.link" :title="food.name" :class="food.name">{{ food.name }}</a>
             <div>{{ food.dfn }}</div>
         </figure>
     </main>`

@@ -31,14 +31,22 @@
             width: 250px;
         }
 
-        main {
+        .center {
+            display: flex;
+            justify-content: center;
+        }
+
+        .grid {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
         }
 
-        .center {
-            display: flex;
+        .grid-dices {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
             justify-content: center;
+            justify-items: center;
         }
 
         /*MEDIA QUERIES*/
@@ -48,7 +56,7 @@
                 font-size: 0.8em;         
             }
             /*PLUS DE COLONNES GRID ICI, QUE DU FLEX*/
-            main {
+            .grid {
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
@@ -60,7 +68,7 @@
             {
                 font-size: 1em;
             }
-            main {
+            .grid {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
             }
@@ -85,20 +93,49 @@
     <script src="components/Food.js"></script>
     <script src="components/Hyperlink.js"></script>
     <script src="components/Dice.js"></script>
+    <script src="components/Example.js"></script>
 
 </head>
 <body>
 
     <div id="app">
 
-        <Hyperlink href="https://www.wikipedia.org" title="https://www.wikipedia.org">My 1st Link</Hyperlink>
-        <Hyperlink href="https://www.wikipedia.org" title="https://www.wikipedia.org">My 2nd Link</Hyperlink>
-
-        <Dice></Dice>
-
         <Name></Name>
 
+        <Example name="1"></Example>
+
+        <h4>Dan Vega's Tutorial</h4>
+
+        <ol>
+            <li><a href="vue-dan-vega-tutorial/vue-001-hello-world.html" title="Dan Vega's Tutorial">vue-001-hello-world.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-002-data-binding-expressions.html" title="Dan Vega's Tutorial">vue-002-data-binding-expressions.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-003-data-binding-directives.html" title="Dan Vega's Tutorial">vue-003-data-binding-directives.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-004-lists.html" title="Dan Vega's Tutorial">vue-004-lists.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-005-basic-friends.html" title="Dan Vega's Tutorial">vue-005-basic-friends.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-006-table-friends.html" title="Dan Vega's Tutorial">vue-006-table-friends.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-007-table-friends-with-index.html" title="Dan Vega's Tutorial">vue-007-table-friends-with-index.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-008-counter.html" title="Dan Vega's Tutorial">vue-008-counter.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-009-counter-upgrades.html" title="Dan Vega's Tutorial">vue-009-counter-upgrades.html</a></li>
+            <li><a href="vue-dan-vega-tutorial/vue-010-timer-component.html" title="Dan Vega's Tutorial">vue-010-timer-component.html</a></li>
+        </ol>
+
         <hr>
+
+        <Example name="2"></Example>
+
+        <div class="grid-dices">
+            <Dice num="4"></Dice>
+            <Dice num="6"></Dice>
+            <Dice num="8"></Dice>
+            <Dice num="10"></Dice>
+            <Dice num="12"></Dice>
+            <Dice num="20"></Dice>
+            <Dice num="100"></Dice>
+        </div>
+
+        <hr>
+
+        <Example name="3"></Example>
 
         <Food></Food>
 

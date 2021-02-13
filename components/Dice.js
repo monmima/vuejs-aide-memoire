@@ -1,26 +1,27 @@
 Vue.component("dice", {
-    props: ["format"],
+    props: ["num"],
     data() {
         return {
-            message: "Hello, Vue!",
-            now: new Date()
+            diceResult: 0
         }
     },
     created() {
         console.log("Dice created!");
     },
     methods: {
-        updateDate() {
-            const d = this.format === "short" ? new Date().toLocaleTimeString() : new Date();
-            this.now = d;
+        throwDice(num) {
+            this.diceResult = Math.floor(Math.random() * this.num + 1);
         },
         test() {
-            console.log("test");
+            document.querySelector("#dice-result").innerHTML = this.diceResult;
         }
     },
     // the only difference with a component instead of having the code directly in your HTML is the fact you need to create a template
     template: `
-        <div>
-            <button class="btn btn-primary" @click="test">button</button>
+        <div class="m-3">
+            <button class="btn btn-primary" @click="throwDice()">Throw a d{{this.num}} dice!</button>
+            <div class="diceDisplay">{{ diceResult > 0 ? "Result: " + diceResult : "Result: -"}}</div>
         </div>`
+    
+
 });

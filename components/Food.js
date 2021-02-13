@@ -20,7 +20,7 @@ Vue.component("food", {
     },
     // the only difference with a CDN component instead of having the code directly in your HTML is the fact you need to create a template
     template: 
-    `<main>
+    `<div class="grid">
         <figure v-for="(food, index) in favoriteFoods" v-bind:key="index">
             <div class="center-image">
                 <img v-bind:src="food.img" v-bind:alt="food.img">
@@ -29,5 +29,5 @@ Vue.component("food", {
             <a v-bind:href="food.link" :title="food.name" :class="food.name">{{ food.name }}</a>
             <div>{{ food.dfn }}</div>
         </figure>
-    </main>`
+    </div>`
 });

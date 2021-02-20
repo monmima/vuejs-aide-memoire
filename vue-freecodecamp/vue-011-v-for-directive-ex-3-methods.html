@@ -18,22 +18,29 @@
 </head>
 <body>
     <div id="root">
-        <!-- online updates the second one because the first one is frozen as static HTML to what it was initially -->
-        <p v-once>{{ email }}</p>
-        <p>{{ email }}</p>
+        <input v-model="newCat" id="newCat">
+        <button v-on:click="addKitty">+ ADD</button>
 
-        <!-- ":" is the same as "v-bind:" -->
-        <input v-model="email" :class="[ email.length < 2 ? 'red' : 'green'  ]">
-        <p>
-            <button onclick="alert('signed up')" v-bind:disabled="email.length < 2">Submit</button>
-        </p>
+        <ul>
+            <li v-for="cat in cats">{{ cat.name }}</li>
+        </ul>
     </div>
 
     <script>
         const app = new Vue({
             el: "#root",
             data: {
-                email: "cats@cats.com"
+                cats: [
+                    { name: "kitty" },
+                    { name: "meow" },
+                    { name: "kitkat" }
+                ],
+                newCat: ""
+            },
+            methods: {
+                addKitty: function() {
+                    return this.cats.push({ name: this.newCat });
+                }
             }
         });
     </script>

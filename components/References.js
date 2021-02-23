@@ -2,6 +2,60 @@ Vue.component("references", {
     data() {
         return {
             allTutorials: {
+
+                danVega: {
+                    title: "Dan Vega's Tutorial",
+                    smallLinks: [
+                        { name: "Udemy", link: "https://www.udemy.com/course/vue-intro" },
+                        { name: "Github", link: "https://github.com/danvega/up-and-running-with-vuejs" }
+                    ],
+                    list: [
+                        { name: "vue-001-hello-world.html", link: "vue-dan-vega-tutorial/vue-001-hello-world.html" },
+                        { name: "vue-002-data-binding-expressions.html", link: "vue-dan-vega-tutorial/vue-002-data-binding-expressions.html" },
+                        { name: "vue-003-data-binding-directives.html", link: "vue-dan-vega-tutorial/vue-003-data-binding-directives.html" },
+                        { name: "vue-003-data-binding-directives.html", link: "vue-dan-vega-tutorial/vue-003-data-binding-directives.html" },
+                        { name: "vue-004-lists.html", link: "vue-dan-vega-tutorial/vue-004-lists.html" },
+                        { name: "vue-005-basic-friends.html", link: "vue-dan-vega-tutorial/vue-005-basic-friends.html" },
+                        { name: "vue-006-table-friends.html", link: "vue-dan-vega-tutorial/vue-006-table-friends.html" },
+                        { name: "vue-007-table-friends-with-index.html", link: "vue-dan-vega-tutorial/vue-007-table-friends-with-index.html" },
+                        { name: "vue-008-counter.html", link: "vue-dan-vega-tutorial/vue-008-counter.html" },
+                        { name: "vue-009-counter-upgrades.html", link: "vue-dan-vega-tutorial/vue-009-counter-upgrades.html" },
+                        { name: "vue-010-timer-component.html", link: "vue-dan-vega-tutorial/vue-010-timer-component.html" },
+                        { name: "vue-011-vue-component/vue-011-vue-component", link: "vue-dan-vega-tutorial/vue-011-vue-component/vue-011-vue-component.html" },
+                        { name: "vue-012-final-challenge.html", link: "vue-dan-vega-tutorial/vue-012-final-challenge/vue-012-final-challenge.html" },
+                    ]
+                },
+
+                justinMacArthur: {
+                    title: "Justin MacArthur's Explanations",
+                    smallLinks: [
+                        { name: "stackoverflow", link: "https://stackoverflow.com/questions/41781746/vue-js-vuex-without-webpack" }
+                    ],
+                    list: [
+                        { name: "vuex.html", link: "vuex-justin-macarthur-example/vuex.html" }
+                    ]
+                },
+
+                programWithErik: {
+                    title: "Program With Erik's Tutorial",
+                    smallLinks: [
+                        { name: "YouTube", link: "https://www.youtube.com/watch?v=LW9yIR4GoVU" }
+                    ],
+                    list: [
+                        { name: "vuex.html", link: "vuex-program-with-erik-tutorial/vuex.html" }
+                    ]
+                },
+
+                GdrDesign: {
+                    title: "Gdr-design's Tutorial",
+                    smallLinks: [
+                        { name: "YouTube", link: "https://www.youtube.com/watch?v=gtQf6RlWKHI&list=PLZmZw3Qo0CRlofD0E7POXwpTuHD48WkaN&index=7" }
+                    ],
+                    list: [
+                        { name: "vue-router.html", link: "vue-router-gdr-design/vue-router.html" }
+                    ]
+                },
+
                 freecodecamp: {
                     title: "freeCodeCamp.org / Gwendolyn Faraday's Tutorial",
                     smallLinks: [
@@ -35,7 +89,7 @@ Vue.component("references", {
                     ]
                 },
 
-                other: {
+                codersTape: {
                     title: "Coder's Tape Tutorial",
                     smallLinks: [
                         { name: "YouTube", link: "https://www.youtube.com/watch?v=UIm-YqYKutk" }
@@ -43,7 +97,7 @@ Vue.component("references", {
                     list: [
                         { name: "vue-api-call.html", link: "vue-coders-tape/vue-api-call.html" }
                     ]
-                },
+                }
 
             }
         }
@@ -59,8 +113,8 @@ Vue.component("references", {
                 <h4>{{ itemInAllTutorials.title }}
                     <small>(
                         <span v-for="(item, index) in itemInAllTutorials.smallLinks" v-bind:key="index">
-                        <a v-bind:href="item.link" v-bind:title="item.name">{{ item.name }}</a></span>
-                    )</small>
+                        <a v-bind:href="item.link" v-bind:title="item.name">{{ item.name }}</a>&nbsp;</span>)
+                    </small>
                 </h4>
                 <ul>
                     <li v-for="(item, index) in itemInAllTutorials.list" v-bind:key="index">

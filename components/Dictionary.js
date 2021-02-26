@@ -2,9 +2,7 @@ Vue.component("dictionary", {
     props: ["name", "link"],
     data() {
         return {
-            dictionary: 'Am I truly an alligator?',
-            fullQuery: this.link,
-            partialQuery: ""
+            fullQuery: this.link
         }
     },
 
@@ -13,24 +11,19 @@ Vue.component("dictionary", {
     },
 
     methods: {
-        someHandler() {
+        handleDictionaryLink() {
             const test = document.querySelector("input");
-            const fullTest = this.link + test.value;
-            console.log(fullTest);
-            fullQuery = fullTest;
+
             document.querySelector("#linka").setAttribute("href", this.link + test.value);
-            return fullQuery;
+            return;
         }
     },
     // the only difference with a component instead of having the code directly in your HTML is the fact you need to create a template
     template: `
         <div class="m-3">
+            <input v-on:keydown="handleDictionaryLink" />
 
-            <h2>My fullQuery: {{ fullQuery }}</h2>
-
-            <input v-on:keydown="someHandler" />
-
-            <p><a id="linka" :href="fullQuery">{{ this.name }}</a></p>
+            <p><a id="linka" :href="fullQuery" class="btn btn-warning" :title="this.name">Search {{ this.name }}</a></p>
         </div>`
     
 

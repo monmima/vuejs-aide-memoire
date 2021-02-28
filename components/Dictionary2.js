@@ -28,12 +28,12 @@ Vue.component("dictionary-2", {
     // the only difference with a component instead of having the code directly in your HTML is the fact you need to create a template
     template: `
         <div class="m-3" :id="this.id">
+
             <input v-on:keyup="handleDictionaryLink" />
 
             <p><a :href="fullQuery" class="btn btn-warning" :title="this.name">Search {{ this.name }}</a></p>
 
             <p><a :href="fullQuery" class="btn btn-warning" :title="this.name">Search {{ this.name }}</a></p>
-
 
         </div>`
 });

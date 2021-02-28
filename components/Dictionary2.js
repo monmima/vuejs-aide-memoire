@@ -1,4 +1,4 @@
-Vue.component("dictionary", {
+Vue.component("dictionary-2", {
     props: ["id", "name", "link"],
     data() {
         return {

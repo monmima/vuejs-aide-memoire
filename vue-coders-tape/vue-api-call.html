@@ -26,10 +26,10 @@
         // source: https://www.youtube.com/watch?v=UIm-YqYKutk
 
         const app = new Vue({
-            props: ["cats"],
-            el: "#app",
-            components: {
 
+            el: "#app",
+            data: {
+                posts: null,
             },
             mounted: function() {
                 axios.get("https://jsonplaceholder.typicode.com/posts")
@@ -38,10 +38,8 @@
                     // if the address given does not exist, etc.
                     .catch(error => this.posts = [{ title: "No posts found." }])
                     .finally(() => console.log("Data loading complete."));
-            },
-            data: {
-                posts: null,
             }
+
 
         });
 

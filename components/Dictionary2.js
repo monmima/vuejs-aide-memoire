@@ -1,12 +1,11 @@
 Vue.component("dictionary-2", {
-    props: ["id", "name", "link"],
+    props: ["id"],
     data() {
         return {
-            fullQuery: this.link,
             dictionaries: [
-                { name: "Wikipedia FR", baselink: "fr.wikipedia.org/wiki/zzzz" },
-                { name: "Wikipedia IT", baselink: "it.wikipedia.org/wiki/zzzz" },
-                { name: "Wikipedia EN", baselink: "en.wikipedia.org/wiki/zzzz" }
+                { name: "Wikipedia FR", baselink: "https://fr.wikipedia.org/wiki/zzzz" },
+                { name: "Wikipedia IT", baselink: "https://it.wikipedia.org/wiki/zzzz" },
+                { name: "Wikipedia EN", baselink: "https://en.wikipedia.org/wiki/zzzz" }
             ]
         }
     },
@@ -14,13 +13,19 @@ Vue.component("dictionary-2", {
     mounted() {
         console.log("Dictionary created!");
 
-        // to clean the href attribute from the start
-        // how this works:
-        // the method below is shared between the list of methods and the lifecycle hook thanks to the href keyword; it just wouldn't work without the this keyword
+        /**
+         * to clean the href attribute from the start
+         * how this works:
+         * the method below is shared between the list of methods and the lifecycle hook thanks to the href keyword; it just wouldn't work without the this keyword
+         */
         this.handleDictionaryLink();
     },
 
     methods: {
+        /**
+         * removes zzzz placeholder
+         * replaces it with the content of the input field
+         */
         handleDictionaryLink() {
             // storing the input box as a variable
             const myInput = document.querySelector(`#${this.id} input`);
